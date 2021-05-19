@@ -1,0 +1,19 @@
+{
+  "name": "technical_assessment_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sharfe25/technical_assessment_API.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sharfe25/technical_assessment_API/issues"
+  },
+  "homepage": "https://github.com/sharfe25/technical_assessment_API#readme"
+}
