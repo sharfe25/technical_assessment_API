@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 });
 
 // Routes
-// app.use(require('./routes/index'));
+app.use('/invoices',require('./routes/invoices'));
 // app.use('/auth',require('./routes/auth'));
 // app.use('/user', require('./routes/user'));
 // app.use('/admin',require('./routes/admin'));
