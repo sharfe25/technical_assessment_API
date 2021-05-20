@@ -44,4 +44,16 @@ invoice_controller.new_invoice=async(req,res) => {
         }
     })
 }
+invoice_controller.individual_invoice=async(req,res) => {
+    const invoice = await pool.query('SELECT invoices.id,clients.client,invoices.subtotal,invoices.discount,invoices.total,invoices.date FROM invoices,clients WHERE invoices.id_client=clients.id AND invoices.id=?',req.body.id);
+    const products= await pool.query('SELECT invoices_products.quantity,products.description_product,products.price FROM products,invoices_products WHERE products.id=invoices_products.id_product AND invoices_products.id_invoice=?',req.body.id);
+    res.json({
+        error: null,
+        data: {
+            title: 'invoice',
+            invoice: invoice,
+            products
+        }
+    })
+}
 module.exports = invoice_controller

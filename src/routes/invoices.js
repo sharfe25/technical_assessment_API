@@ -6,5 +6,6 @@ router.get('/invoicesList',invoices.invoice_list)
 
 router.post('/new_invoice', invoices.new_invoice)
 
-router.post('/new_invoice', invoices.new_invoice)
+router.post('/individual_invoice', invoices.individual_invoice)
+
 module.exports = router
