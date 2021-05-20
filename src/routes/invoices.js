@@ -2,7 +2,6 @@ const router = require('express').Router();
 const pool = require("../database")
 
 router.get('/invoicesList',async(req,res) => {
-    console.log('hi')
     const invoices = await pool.query('SELECT invoices.id,clients.client,invoices.subtotal,invoices.discount,invoices.total FROM invoices,clients WHERE invoices.id_client=clients.id');
 
     res.json({
@@ -34,13 +33,12 @@ router.post('/new_invoice',async(req,res) => {
             id_product:product.id_product,
             quantity:product.quantity
         }
-        console.log(product_invoice)
         let product_invoice_add = await pool.query('INSERT INTO invoices_products SET ?',[product_invoice])
     });
     res.json({
         error: null,
         data: {
-            title: 'mi ruta protegida',
+            title: 'add new invoice',
             message: 'successful'
         }
     })
