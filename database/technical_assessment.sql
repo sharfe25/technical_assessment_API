@@ -4,7 +4,7 @@ use technical_assessment;
 
 CREATE TABLE IF NOT EXISTS invoices(  
     id INT primary key AUTO_INCREMENT,          
-    id_client VARCHAR(100),
+    id_client INT,
     date varchar(100),
     subtotal INT,
     discount INT,
